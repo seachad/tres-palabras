@@ -1,0 +1,129 @@
+:root {
+  --fondo: #DCD9E6;
+  --texto: #23102E;
+  --suave: #5A5566;
+  --titulo: #7A1E6C;
+  --campo: #F1EFF7;
+  --coral: #FF6B6B;
+  --rosa: #F0457F;
+  --a: #2F6FEB;
+  --b: #E8862A;
+  --ok: #128A3E;
+  --radio: 20px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; padding: 12px; min-height: 100dvh;
+  display: flex; justify-content: center; align-items: flex-start;
+  color: var(--texto);
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, #FFD6E4 0, transparent 40%),
+    radial-gradient(circle at 85% 90%, #CFE3FF 0, transparent 45%),
+    var(--fondo);
+}
+.tarjeta {
+  width: 100%; max-width: 480px; min-height: calc(100dvh - 24px);
+  padding: 2rem 1.5rem 3rem; border-radius: 16px; text-align: center;
+  background: rgba(255, 255, 255, .78); backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(35, 16, 46, .18);
+  animation: entrar .25s ease-out;
+}
+@keyframes entrar { from { opacity: 0; transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) { .tarjeta { animation: none; } }
+
+h1 { color: var(--titulo); font-size: 2.2rem; margin: .2rem 0 .4rem; }
+h2 { color: var(--titulo); font-size: 1.5rem; margin: 0 0 .6rem; }
+p { line-height: 1.45; }
+.logo { font-size: 3rem; line-height: 1; margin-top: .5rem; }
+.suave { color: var(--suave); }
+.pequeno { font-size: .9rem; }
+.error { color: #B3261E; font-weight: 600; min-height: 1.2em; }
+
+button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+button:active { transform: scale(.97); }
+button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.btn {
+  border: none; border-radius: var(--radio); padding: 12px 22px;
+  background: var(--coral); color: #fff; font-weight: 700;
+}
+.btn.sec { background: var(--campo); color: var(--texto); }
+.btn.ancho { width: 100%; }
+.enlace { background: none; border: none; color: var(--suave); text-decoration: underline; padding: 8px; }
+
+.redondo {
+  display: grid; place-items: center; margin: 1.5rem auto;
+  width: 180px; height: 180px; border-radius: 50%; border: none;
+  background: linear-gradient(135deg, var(--coral), var(--rosa)); color: #fff;
+  font-size: 1.8rem; font-weight: 700; box-shadow: 0 10px 24px rgba(240, 69, 127, .35);
+}
+.redondo.ok { background: linear-gradient(135deg, #2E9B57, #128A3E); box-shadow: 0 10px 24px rgba(18, 138, 62, .35); }
+
+input[type=text] {
+  width: 100%; padding: 12px 16px; border: 2px solid transparent; border-radius: var(--radio);
+  background: var(--campo); color: var(--texto); font-size: 16px; outline: none;
+}
+input[type=text]:focus { border-color: var(--rosa); }
+.codigo-input { text-transform: uppercase; letter-spacing: .3em; text-align: center; font-weight: 700; }
+.fila { display: flex; gap: 10px; align-items: center; margin: 10px 0; }
+.fila > * { flex: 1; }
+.campos { display: grid; gap: 10px; margin: 12px 0; text-align: left; }
+label { font-weight: 600; font-size: .95rem; }
+
+.grupos { display: flex; gap: 10px; }
+.grupo-btn {
+  flex: 1; padding: 14px; border-radius: var(--radio); border: 2px solid transparent;
+  background: var(--campo); font-weight: 700;
+}
+.grupo-btn[aria-pressed=true].A { background: var(--a); color: #fff; }
+.grupo-btn[aria-pressed=true].B { background: var(--b); color: #fff; }
+
+.codigo { font-size: 2.6rem; font-weight: 800; letter-spacing: .25em; color: var(--titulo); margin: .2rem 0; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: left; margin: 1rem 0; }
+.col { background: var(--campo); border-radius: 14px; padding: 10px; }
+.col h3 { margin: 0 0 6px; font-size: 1rem; }
+.col.A h3 { color: var(--a); } .col.B h3 { color: var(--b); }
+.col ul { list-style: none; margin: 0; padding: 0; }
+.col li { display: flex; align-items: center; gap: 4px; padding: 4px 0; font-size: .95rem; }
+.col li span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mini { background: none; border: none; color: var(--suave); padding: 2px 6px; font-size: 1rem; }
+
+.ajuste { display: flex; justify-content: center; align-items: center; gap: 12px; margin: .8rem 0; }
+.ajuste .btn { padding: 8px 16px; }
+.ajuste b { min-width: 4ch; }
+
+.chip { display: inline-block; padding: 4px 12px; border-radius: 999px; font-weight: 700; color: #fff; }
+.chip.A { background: var(--a); } .chip.B { background: var(--b); }
+
+.marcador { display: flex; justify-content: center; gap: 24px; font-size: 1.1rem; margin: .5rem 0 1rem; }
+.marcador b { font-size: 1.6rem; }
+
+.reloj { position: relative; width: 96px; height: 96px; margin: .5rem auto; }
+.reloj svg { transform: rotate(-90deg); }
+.reloj span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 1.8rem; font-weight: 800; }
+.reloj.poco { animation: latido .8s ease-in-out infinite; }
+.reloj.poco span { color: #B3261E; }
+@keyframes latido { 50% { transform: scale(1.08); } }
+
+.palabra {
+  font-size: clamp(2rem, 11vw, 3.2rem); font-weight: 800; margin: 1.2rem 0; min-height: 2.4em;
+  display: grid; place-items: center; word-break: break-word; color: var(--texto);
+}
+.regla { background: var(--campo); border-radius: 14px; padding: 10px 14px; margin: .6rem 0; }
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th, td { padding: 8px; border-bottom: 1px solid #E3E0EC; }
+th:first-child, td:first-child { text-align: left; }
+.lista-aciertos { list-style: none; padding: 0; margin: .5rem 0 1rem; }
+.lista-aciertos li { padding: 4px 0; font-weight: 600; }
+
+.ayuda {
+  position: fixed; right: 16px; bottom: 16px; width: 52px; height: 52px; border-radius: 50%;
+  border: 3px solid #fff; background: #00695C; color: #fff; font-size: 1.6rem; font-weight: 800;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+}
+dialog { border: none; border-radius: 16px; max-width: 440px; padding: 1.5rem; color: var(--texto); }
+dialog::backdrop { background: rgba(35, 16, 46, .45); }
+dialog ol { padding-left: 1.2rem; text-align: left; line-height: 1.5; }
+dialog form { text-align: center; margin-top: 1rem; }

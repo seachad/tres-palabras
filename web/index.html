@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#7A1E6C">
+  <meta name="description" content="Juego de grupo: cada uno aporta tres palabras y, en tres rondas, se adivinan explicándolas, con una sola palabra y con mímica.">
+  <title>Tres palabras</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <main class="tarjeta" id="app" aria-live="polite"></main>
+  <button class="ayuda" id="btn-ayuda" aria-label="Cómo se juega">?</button>
+
+  <dialog id="dlg-ayuda">
+    <h2>Cómo se juega</h2>
+    <ol>
+      <li><b>Crea la partida</b> en un móvil: será el que se pase de mano en mano.</li>
+      <li>Cada persona entra desde su móvil con el código, elige <b>grupo A o B</b> y escribe <b>tres palabras</b> (nadie más las ve).</li>
+      <li>Cuando estén todos, el anfitrión pulsa <b>Empezar</b>. Se juegan tres rondas con <b>las mismas palabras</b>:
+        <ul>
+          <li><b>1 · Explicar:</b> todas las palabras que quieras, sin decir la palabra.</li>
+          <li><b>2 · Una palabra:</b> solo una palabra relacionada.</li>
+          <li><b>3 · Mímica:</b> solo gestos.</li>
+        </ul>
+      </li>
+      <li>En cada turno, una persona tiene el tiempo marcado (1 minuto por defecto) para que <b>su grupo</b> adivine todas las palabras que pueda. Pulsa <b>¡Acertada!</b> para pasar a la siguiente. No se puede pasar palabra.</li>
+      <li>Cuando se acaba el tiempo, el móvil pasa al otro grupo. La ronda termina cuando se han adivinado todas las palabras.</li>
+      <li>Gana el grupo que más palabras haya adivinado en las tres rondas.</li>
+    </ol>
+    <form method="dialog"><button class="btn">Entendido</button></form>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

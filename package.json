@@ -1,0 +1,15 @@
+{
+  "name": "tres-palabras",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Juego de grupo: tres palabras por persona, tres rondas (explicar, una palabra, mímica).",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
