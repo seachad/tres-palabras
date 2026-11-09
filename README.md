@@ -50,6 +50,6 @@ npx wrangler login    # una vez, abre el navegador para entrar en Cloudflare
 npm run deploy
 ```
 
-Queda en `https://tres-palabras.<tu-subdominio>.workers.dev`. Es gratis dentro del plan gratuito de Cloudflare Workers (Durable Objects con almacenamiento SQLite incluidos).
+Queda en **https://palabras.pecomac.com** (y también en `https://tres-palabras.pecomac.workers.dev`). El dominio se configura en `wrangler.toml` (`routes`, con `custom_domain = true`): Cloudflare crea solo el registro DNS y el certificado, porque `pecomac.com` está en la misma cuenta. Es gratis dentro del plan gratuito de Cloudflare Workers (Durable Objects con almacenamiento SQLite incluidos).
 
 También se publica sola al subir a `main` si el repositorio tiene los secretos `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID` (flujo `.github/workflows/desplegar.yml`).

@@ -1,6 +1,11 @@
 name = "tres-palabras"
 main = "worker/index.js"
 compatibility_date = "2025-09-01"
+# Direcciones: la de workers.dev sigue activa y, además, el dominio propio.
+workers_dev = true
+routes = [
+  { pattern = "palabras.pecomac.com", custom_domain = true },
+]
 
 [assets]
 directory = "./web"
